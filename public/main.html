@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+div.content{margin: 80px 180px 80px 180px}
+div.bgimg0{background-image: url("images/bgimg1.jpeg"); min-height: 400px; background-attachment: fixed; background-size: cover}
+div.bgimg1{background-image: url("images/bgimg.jpeg"); min-height: 400px; background-attachment: fixed; background-size: cover}
+div.bgimg2{background-image: url("images/bgimg2.jpeg"); min-height: 400px; background-attachment: fixed; background-size: cover}
+.icon {background: white; color: white; transition: 2s; height:100px; width: 100px; padding-top: 25px;}
+.changeColor {background: red;}
+.card {height: 300px; padding-top:20px}
+.sidebar { visibility: hidden;}
+.visible {visibility:visible;}
+
+</style>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="w3-top">
+<div class="w3-row w3-large" style="height: 80px">
+    <a href="#aboutme" class="w3-col m3 w3-button w3-block w3-white w3-hover-red w3-xlarge" style="padding-top: 25px"><i class = "w3-padding fa fa-user-circle-o"></i>About Me</a>
+    <a href="#skills" class="w3-col m3 w3-button w3-block w3-white w3-hover-red w3-xlarge" style="padding-top: 25px"><i class = "w3-padding fa fa-cogs"></i>skills</a>
+    <a href="#experience" class="w3-col m3 w3-button w3-block w3-white w3-hover-red w3-xlarge" style="padding-top: 25px"><i class = "w3-padding fa fa-suitcase"></i>Experience</a>
+    <a href="#contactme" class="w3-col m3 w3-button w3-block w3-white w3-hover-red w3-xlarge" style="padding-top: 25px"><i class = "w3-padding fa fa-phone"></i>Contact Me</a>
+</div>
+</div>
+
+<div style= "padding: 0px 170px 0px 170px">
+<!-- Slideshow -->
+<div id = "return">
+<img ng-show = slides[0] src="images/personal2.jpeg" class = "w3-animate-opacity" style="width:100%">
+<img ng-show = slides[1] src="images/slide1.jpeg" class = "w3-animate-opacity" style="width:100%">
+<img ng-show = slides[2] src="images/personal1.jpeg" class = "w3-animate-opacity" style="width:100%">
+</div>
+<!-- sidebar -->
+<div class=" sidebar w3-sidebar  w3-green w3-xxlarge" style=" bottom:0; right: 0; width:70px; height: 70px">
+    <a href ="#return" class=" w3-bar-item w3-button"><i class = "fa fa-arrow-up"></i></a>
+</div>
+<!-- Slideshow buttons -->
+<div class=" w3-container w3-dark-grey w3-padding w3-xlarge" >
+<div class="w3-left" ng-click="prev()"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+<div class="w3-right" ng-click="next()"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+
+<div class = "w3-center">
+<span ng-click = "show(0)" class="w3-button  w3-border  w3-hover-white" ></span>
+<span ng-click = "show(1)" class="w3-button  w3-border  w3-hover-white" ></span>
+<span ng-click = "show(2)" class="w3-button  w3-border  w3-hover-white" ></span>
+</div>
+</div>
+</div>
+
+<div class = "w3-center" style="margin-top: 80px" id="aboutme">
+    <a href= "Resume.pdf" ><button class="w3-button w3-blue-grey w3-center w3-section w3-wide w3-xxlarge w3-round-large w3-padding-large" >
+<i class="fa fa-paper-plane"></i>MY RESUME
+</button></a>
+</div>
+
+<!--About Me -->
+<div class = "content w3-container w3-sand w3-row-padding" >
+<div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center" style="font-weight: bold">ABOUT ME</h3>
+<p class="w3-center"><em>I love programming</em></p>
+<p>A First year Computer Engineering student at the University of Waterloo who interested in <b>programing</b>, <b>artificial intellgence</b> and <b>challenging</b>.</p>
+<div class="w3-row">
+<div class="w3-col m6 w3-center w3-padding-large">
+<p><b><i class="fa fa-user w3-margin-right"></i>Fuhai Gao</b></p><br>
+<img src="images/intro.jpeg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" style="width: 50%">
+</div>
+
+<!-- Hide this text on small devices -->
+<div class="w3-col m6 w3-hide-small w3-padding-large">
+<p class="w3-text-blue-grey">Fuhai is a self-motivated coop student in Waterloo who has a strong interest in developing applications and software. He relishes the process of logical problem-solving and keeps challenging himself. Exploring algorithm and developing projects occupied the most of his time. With this strong interest, he will never stop exploring new areas. </p>
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- Skills -->
+<div class = "bgimg0 w3-display-container w3-opacity-min" id="skills">
+<div class="w3-display-middle">
+<span class = "w3-wide w3-xxlarge w3-text-white w3-bottombar w3-border-red " >Skills</span>
+</div>
+</div>
+
+<div class = "content w3-container w3-sand w3-row-padding" >
+
+<p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+
+<p class="w3-wide">Coding</p>
+<div class="w3-light-grey">
+<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+</div>
+<p class="w3-wide">Front end</p>
+<div class="w3-light-grey">
+<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+</div>
+<p class="w3-wide">Back end</p>
+<div class="w3-light-grey">
+<div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+</div>
+
+<div class = "w3-quarter w3-padding-48">
+<div class = "card w3-card-4 w3-light-grey">
+<div class = "w3-center">
+<i class = "icon w3-center w3-circle w3-xxxlarge fa fa-code w3-bold" ></i>
+<h2>Coding</h2>
+</div>
+
+<ul>
+<li>C++</li>
+<li>Python</li>
+<li>Java</li>
+</ul>
+
+</div>
+</div>
+
+<div class = "w3-quarter w3-padding-48">
+<div class = "card w3-card-4 w3-light-grey">
+<div class = "w3-center">
+<i class = "icon w3-center w3-circle w3-xxxlarge fa fa-globe w3-bold" ></i>
+<h2>Front End</h2>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>AngularJS</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div class = "w3-quarter w3-padding-48">
+<div class = "card w3-card-4 w3-light-grey">
+<div class = "w3-center">
+<i class = "icon w3-center w3-circle w3-xxxlarge fa fa-cogs w3-bold"></i>
+<h2>Back End</h2>
+
+<ul>
+<li>Express</li>
+<li>NodeJS</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div class = "w3-quarter w3-padding-48">
+<div class = "card w3-card-4 w3-light-grey">
+<div class = "w3-center">
+<i class = "icon w3-center w3-circle w3-xxxlarge fa fa-database w3-bold"></i>
+<h2>Database</h2>
+<ul>
+<li>MongoDB</li>
+<li>SQl</li>
+<li>MySQl</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+<!--Experience -->
+<div class = "bgimg1 w3-display-container w3-opacity-min" id ="experience">
+<div class="w3-display-middle">
+<span class = "w3-wide w3-xxlarge w3-text-white w3-bottombar w3-border-red" >Experience</span>
+</div>
+</div>
+
+<div class = "content w3-container w3-transparent">
+
+<div class="w3-row w3-container">
+    <div class = "w3-half " style = "padding: 80px 24px 80px 24px">
+<img src="images/imagine.jpeg" style="width: 100%;">
+
+</div>
+<div class = "w3-half ">
+    <span class = "w3-xlarge w3-text-dark-grey" style= "font-weight: bold">Imagine Communications</span><br>
+    <span class = "w3-xlarge w3-text-grey" >QA Automation</span>
+<ul class="w3-text-grey">
+    <li>Extracted the existing data from excel and reorganized as well as processed it using C++</li>
+    <li>Built up the blocks for graph construction using Zenium and test through out the whole system based on each block behaviour</li>
+    <li>Developed Java/Groovy script to test graph's functionality, performance and robustness in the system level</li>
+    <li>Made regular coding peer review and further optimization</li>
+</ul>
+</div>
+</div>
+<div class="w3-row w3-container">
+<div class = "w3-half w3-padding-large">
+<span class = "w3-xlarge w3-text-dark-grey" style= "font-weight: bold">Full Stack Web Application</span>
+<span class = "w3-xlarge w3-text-grey" >Authenication ToDoList</span><br>
+<a class = "w3-text-light-blue" href="https://logintodo.herokuapp.com/">View My Project: logintodo.heroku.com</a>
+<ul class="w3-text-grey">
+    <li>Used MongoDB to store and process username and password</li>
+    <li>Developed sign up and sign in features including username and password verification and resetting</li>
+    <li>Developed the features of adding, deleting and displaying tasks in the to-do list using AngularJS</li>
+</ul>
+</div>
+<div class = "w3-half w3-padding-large">
+<img src="images/login.jpeg" style="width: 100%;">
+</div>
+
+<div class="w3-row w3-container">
+<div class = "w3-half w3-padding-large">
+<img src="images/ewang.jpeg" style="width: 100%;">
+</div>
+<div class = "w3-half w3-padding-large">
+<span class = "w3-xlarge w3-text-dark-grey" style= "font-weight: bold">EWANG Science and Technology</span><br>
+<span class = "w3-xlarge w3-text-grey" >Web Developer</span>
+<ul class="w3-text-grey">
+    <li>Developed homepage for JIANGHAI STAINLESS STELL.LTD using HTML, CSS, JavaScript, AngularJS <a class = "w3-text-light-blue"href = "http://www.xzjhbxg.com/">http://www.xzjhbxg.com/</a> </li>
+    <li>Improved old code base in more modern ways</li>
+    <li>Collaborated with designers and teammates to implement various front end code</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Contact Me -->
+<div class = "bgimg2 w3-display-container w3-opacity-min" id ="contactme">
+<div class="w3-display-middle">
+<span class = "w3-wide w3-xxlarge w3-text-white w3-bottombar w3-border-red " >Contact Me </span>
+</div>
+</div>
+
+<div class = "content w3-container w3-sand">
+<h3 class="w3-center">WHERE I Live</h3>
+<p class="w3-center"><em>I'd love your feedback!</em></p>
+<!-- Add Google Maps -->
+<div class="w3-col m12 w3-container">
+<div id="map" class="w3-round-large" style="width:100%; height:200px;"></div>
+</div>
+<div class="w3-col m12 w3-panel">
+<div class="w3-large w3-margin-bottom">
+<i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Waterloo, Canada<br>
+<i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +1-647-995-7808<br>
+<i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: fuh.gao@gmail.com<br>
+</div>
+<p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+<form>
+<div class="w3-half " style="margin:4px 8px 4px 8px">
+<input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" ng-model="formData.name">
+</div>
+<div class="w3-half " style="margin:4px 8px 4px 8px">
+<input class="w3-input w3-border" type="text" placeholder="Email" required name="Email" ng-model="formData.email">
+</div>
+<div class="w3-threequarter w3-padding-small w3-block">
+<input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" ng-model="formData.message">
+</div>
+
+<button ng-click ="submit()" class="w3-button w3-black w3-right " type="submit" style="margin: 70px 8px 10px 8px ">
+<i class="fa fa-paper-plane"></i> SEND MESSAGE
+</button>
+
+
+
+</form>
+</div>
+{{result}}
+</div>
+
+
+
+</body>
+
+<script>
+$(function() {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1200) {
+            $(".icon").addClass('changeColor')
+        }
+        if ($(this).scrollTop() < 1200) {
+            $('.icon').removeClass('changeColor')
+        }
+        if ($(this).scrollTop() > 500) {
+            $('.sidebar').addClass('visible')
+        }
+        if ($(this).scrollTop() < 500) {
+            $('.sidebar').removeClass('visible')
+        }
+    });
+});
+
+
+function initMap() {
+    var uluru = {lat: 43.4731286, lng: -80.5366848};
+    var map = new google.maps.Map(document.getElementById('map'), {
+                                  zoom: 12,
+                                  center: uluru
+                                  });
+                                  var marker = new google.maps.Marker({
+                                                                      position: uluru,
+                                                                      map: map
+                                                                      });
+}
+var app = angular.module("myApp",[]);
+var curr = 0;
+app.controller('myCtrl',function($scope,$interval,$http){
+    $scope.formData = {};
+    $scope.slides = [true,false,false];
+    var x;
+    $scope.show = function(x){
+        var i;
+        for (i=0; i<3; i++){
+            if (i==x) {$scope.slides[i] = true;}
+            else {$scope.slides[i] = false;}
+        }
+    }
+
+    $scope.prev = function(){
+        curr--;
+        if (curr < 0) curr = 2;
+        $scope.show(curr);
+    }
+    $scope.next = function(){
+        curr++;
+        if (curr > 2) curr = 0;
+        $scope.show(curr);
+    }
+    $scope.submit = function(){
+      $http.post('/send', $scope.formData)
+            .then(function(response){
+              $scope.formData = {};
+              if (response.data == "succeed"){
+                $scope.result = "Your email has been sent, thank you!";
+              };
+            });
+    }
+
+    $interval(function () {
+        $scope.next();
+    }, 5000);
+})
+
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDwjUs5NxkVI8u7Xh3ROSPY8NIM6vgOuE&callback=initMap">
+    </script>
+
+</html>
